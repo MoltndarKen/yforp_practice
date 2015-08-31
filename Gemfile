@@ -37,4 +37,11 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'pry-rails'
+gem 'devise'
+gem 'paperclip'
+gem 'kaminari'
+ 
+gem 'therubyracer'
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap-material-design', '0.1.4'
