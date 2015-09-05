@@ -1,3 +1,11 @@
-<div class= "row form user_profile" >
-  <div class= "clo-lg-12">
-    <h2><%= @user.name %><span><%= @user.name_kana %></span>
+<div class="row form user_profile">
+  <div class="col-lg-12">
+    <div class="image" style="background-image: url(<%= @user.avatar.url %>);"></div>
+    <h2><%= @user.name %><span><%= @user.name_kana %></span></h2>
+    <% if current_user.id == @user.id %>
+      <div class="profile_edit">
+        <%= link_to 'プロフィール編集', edit_user_path(current_user.id), {:class => 'btn btn-primary withripple' }%>
+      </div>
+    <% end %>
+  </div>
+</div>

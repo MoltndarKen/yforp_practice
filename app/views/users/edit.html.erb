@@ -18,6 +18,10 @@
           <%= f.text_field :first_name_kana, placeholder: 'メイ', class: 'form-control' %>
         </div>
       </div>
+      <div class="col-lg-6">
+          <%= f.label "画像" %>
+          <%= f.file_field :avatar %>
+      </div>
       <div class="form-group">
         <%= f.submit "送信", :class => 'btn btn-primary withripple' %>
       </div>

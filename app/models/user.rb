@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :group
+  mount_uploader :avatar, AvatarUploader
   attr_accessor :group_key
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
