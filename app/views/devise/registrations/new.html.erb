@@ -20,7 +20,10 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
+  <div class="field">
+    <%= f.label "グループ名(半角英数)" %>
+    <%= f.text_field :group_key, autofocus: true, class: 'form-control' %>
+  </div>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
