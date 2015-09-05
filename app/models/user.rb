@@ -24,7 +24,12 @@ class User < ActiveRecord::Base
       false
     end
   end
- 
+  def name
+    "#{self.family_name}#{self.first_name}"
+  end
+  def name_kana
+    "#{self.family_name_kana}#{self.first_name_kana}"
+  end
   private
   def has_group_key?
     group_key.present?
