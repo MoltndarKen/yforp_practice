@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable, authentication_keys: [:email, :group_key]
+         :recoverable, :rememberable, :trackable, :validatable,authentication_keys: [:email, :group_key]
   #association
   before_validation :group_key_to_id, if: :has_group_key?
 
@@ -31,6 +31,11 @@ class User < ActiveRecord::Base
   def name_kana
     "#{self.family_name_kana}#{self.first_name_kana}"
   end
+
+  def full_profile?
+    self.family_name? && self.first_name? && self.family_name_kana? && self.first_name_kana? && self.avatar?
+  end
+
   private
   def has_group_key?
     group_key.present?
